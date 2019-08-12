@@ -1,0 +1,15 @@
+{% extends "@FOSUser/layout.user.html.twig" %}
+
+
+
+{% block fos_user_content%}
+<div    class=" well col-md-9 ">
+<h1 class="information">Add Your New Skills</h1>
+
+    {{ form_start(form)}}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-success">Valider</button>
+    {{ form_end(form) }}
+
+</div>
+{% endblock %}

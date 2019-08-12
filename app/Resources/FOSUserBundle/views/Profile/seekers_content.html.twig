@@ -1,0 +1,51 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="well   col-md-9" >
+    <div class="content-wrapper">
+
+        <section class="content">
+
+            <div class="row">
+                <div  >
+
+
+                    <div class="box box-primary">
+                        <div class="box-body box-profile">
+
+<hr>
+                    <div>
+                        <table style="width:100%">
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Contact</th>
+                            </tr>
+                            {% for user in users %}
+
+
+
+                                        <tr>
+                                            <td><p>{{ user.username }} </p></td>
+                                            <td><p>{{ user.location }}</p></td>
+                                            <td><p>{{ user.email }}</p> </td>
+                                            <td> <a href="{{ path('user_show', { 'id': user.id }) }}">Show</a></td>
+                                        </tr>
+
+                            {% endfor %}
+                        </table>
+                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+</div>
+

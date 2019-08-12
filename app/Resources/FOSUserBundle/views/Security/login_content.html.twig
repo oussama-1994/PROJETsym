@@ -1,0 +1,86 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+
+
+
+<div class="login-box">
+    <div class="login-logo">
+        <b>WeCoding</b>.TN</a>
+    </div>
+
+
+
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        {% if error %}
+            <div class="alert alert-error">username or password incorrect</div>
+        {% endif %}
+
+        <form    action="{{ path("fos_user_security_check") }}" method="post">
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% endif %}
+
+            <div class="form-group has-feedback">
+                <label for="username"  >{{ 'security.login.username'|trans }}</label>
+                <input type="text" id="username" name="_username"  class="form-control" value="{{ last_username }}" required="required" autocomplete="username" />
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+
+
+
+            <div class="form-group has-feedback">
+                <label for="password"   >{{ 'security.login.password'|trans }}</label>
+                <input type="password" id="password" name="_password"  class="form-control" required="required" autocomplete="current-password" />
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
+
+            <div class="container">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <!-- /.col -->
+                <div  >
+                    <input type="submit" id="_submit" class="btn btn-primary btn-md form-control" name="_submit" value="{{ 'security.login.submit'|trans }}"  />
+                    <br>
+                </div>
+                <!-- /.col -->
+            </div>
+
+
+
+
+
+
+
+
+        </form>
+    </div>
+    <div class="login-box">
+        <div class="login-box-body">
+
+        <div  >
+            <br>
+            <a href="{{ path('registtest') }}" class="form-control btn btn-success"><span class="glyphicon glyphicon-briefcase"></span> Register as professionel </a>
+
+
+            <br>
+        </div>
+
+        <div >
+            <br>
+            <a href="{{ path('fos_user_registration_register') }}" class="form-control btn btn-success" > <span class="glyphicon glyphicon-education"></span>     Register as a developer </a>
+            <br>
+        </div>
+        </div>
+    </div>
+    <!-- /.login-box-body -->
+</div>

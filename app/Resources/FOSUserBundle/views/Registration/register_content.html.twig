@@ -1,0 +1,28 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="login-box">
+
+    <div class="login-box-body">
+
+
+{{ form_start(form, {'method': 'post','attr': {'class': 'fos_user_registration_register '}}) }}
+
+        {{ form_widget(form) }}
+
+    <div>
+        <input type="submit"  class="btn btn-primary form-control" value="{{ 'registration.submit'|trans }}" />
+    </div>
+
+{{ form_end(form) }}
+    </div>
+</div>
+<div class="login-box">
+    <div class="login-box-body">
+
+       <div >
+            <br>
+            <a href="{{ path('fos_user_security_login') }}" class=" form-control btn btn-primary " >I'm already registered</a>
+            <br>
+        </div>
+    </div>
+</div>

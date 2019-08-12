@@ -1,0 +1,42 @@
+app_user:
+    resource: "@AppBundle/Controller/UserController.php"
+    type:     annotation
+
+
+
+app_internship:
+    resource: "@AppBundle/Controller/internshipController.php"
+    type:     annotation
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+fos_user_registration_register:
+    path: /register
+    controller: AppBundle\Controller\RegistrationController::registerAction
+
+fos_user_profile_edit :
+    path: /profile/edit
+    controller: AppBundle\Controller\ProfileController::editAction
+
+fos_user_profile_show  :
+    path: /profile/
+    controller: AppBundle\Controller\ProfileController::showAction
+
+fos_pro_profile_show  :
+    path: /profile_pro/
+    controller: AppBundle\Controller\ProfileProController::showAction
+
+
+fos_pro_profile_edit :
+    path: /profile/edit_pro
+    controller: AppBundle\Controller\ProfileProController::editAction
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin

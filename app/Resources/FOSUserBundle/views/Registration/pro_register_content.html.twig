@@ -1,0 +1,58 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="login-box">
+
+    <div class="login-box-body">
+        <p class="login-box-msg">Be great at what you do</p>
+        <p class="login-box-msg"> Get started - it's free.</p>
+
+        {{ form_start(form, {'method': 'post','attr': {'class': 'fos_user_registration_register '}}) }}
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'form.email'|trans } }) }}
+            {{ form_errors(form.email) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'form.username'|trans } }) }}
+            {{ form_errors(form.username) }}
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Password</label>
+            {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'form.password'|trans } }) }}
+            {{ form_errors(form.plainPassword.first) }}
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Password</label>
+            {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'form.password_confirmation'|trans } }) }}
+            {{ form_errors(form.plainPassword.second) }}
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Entreprise</label>
+            {{ form_widget(form.institut, { 'attr': {'class': 'form-control', 'placeholder': 'entreprise'|trans } }) }}
+            {{ form_errors(form.username) }}
+        </div>
+
+
+
+
+
+        <br>
+        <div>
+            <input type="submit" class="btn btn-primary form-control" value="{{ 'registration.submit'|trans }}" />
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+
+
+
+
+
+
+
+</div>

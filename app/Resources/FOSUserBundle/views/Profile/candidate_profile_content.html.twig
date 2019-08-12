@@ -1,0 +1,118 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div    class=" well col-md-9 ">
+    <div class="fos_user_user_show">
+
+
+        <div class="content-wrapper">
+
+            <section class="content">
+
+                <div class="row">
+                    <div  >
+
+
+                        <div class="box box-primary">
+                            <div class="box-body box-profile">
+                                <img class="profile-user-img img-responsive img-circle" src="{{ asset ('uploads/images/'~ user.image) }}" alt="User profile picture">
+
+                                <p class="text-muted text-center "> <strong>{{ user.username }}</strong></p>
+
+                                <p class="text-muted text-center">{{ user.headline }}</p>
+
+                                <p class="text-muted text-center ">{{ user.location }}</p>
+                                <p class="text-muted text-center ">{{ user.email }}</p>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+
+
+
+
+
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">About Me</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+
+                                <p class="text-muted">
+                                    <strong> {{ user.institut  }} : </strong>  {{ user.field }}
+                                </p>
+
+                                <hr>
+
+                                <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+
+                                <p class="text-muted">{{ user.location }}</p>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="box box-primary">
+
+
+                            <div class="box-header with-border">
+
+
+                                <h3 class="box-title">Skills</h3>
+
+
+                                <div class="box-body">
+                                    <table class="table table-hover " >
+                                        <thead>
+                                        <tr>
+
+                                            <th>Name</th>
+
+
+                                        </tr>
+                                        </thead>
+                                        <tbody >
+                                        {% for skill in skills %}
+                                            <tr>
+                                                <td>{{ skill.name }}</td>
+
+
+                                            </tr>
+                                        {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <div><strong><i class="fa fa-book margin-r-5"></i> Notes</strong></div>
+                                <hr>
+                                {{ user.notes }}
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+            </section>
+            <!-- /.content -->
+        </div>
+
+
+    </div>
+</div>

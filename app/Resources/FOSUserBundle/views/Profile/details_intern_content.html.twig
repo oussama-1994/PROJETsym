@@ -1,0 +1,46 @@
+
+<div  >
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <img class="img-responsive pull-left" src="{{ asset ('uploads/images/'~ user.image)  }}" width="50" height="50" >
+            <u class="fa fa-bullhorn"></u>
+            <h3 class="box-title">{{ internship.title |capitalize }}</h3>
+            <h4> {{ internship.entreprisename |capitalize }}    </h4>
+            <lu class="pull-right">
+                <a href="{{ path('internship_edit', { 'id': internship.id }) }}" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
+                <a href="{{ path('internship_delete', { 'id': internship.id }) }}" class="btn btn-danger" onclick="return confirm('are u sure?')" > <i class="fa fa-trash"></i>  Delete</a>
+
+            </lu>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div  >
+                <p style="text-align:center">      <img src="{{ asset ('uploads/images/'~ internship.image ) }}" class="fa-border" alt="User profile picture"></p>
+            </div>
+            <div>
+
+                <strong>Description :</strong> <br>
+                <div>
+                    {{ internship.description |capitalize }}
+                </div>
+            </div>
+            <hr>
+            <div class="pull-left">
+
+                {% if internship.date %}
+                    <li class="fa fa-fw fa-clock-o"></li>    {{ internship.date|date('Y-m-d') }}
+                {% endif %}
+            </div>
+            <div  >
+
+                | <li class="fa fa-fw fa-map-marker"></li> {{ user.location }}
+            </div>
+
+        </div>
+
+
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+

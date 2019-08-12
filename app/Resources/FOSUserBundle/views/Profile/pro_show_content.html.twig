@@ -1,0 +1,174 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div    class=" well col-md-9 ">
+<div class="fos_user_user_show">
+
+    <div class="content-wrapper">
+
+        <section class="content">
+
+            <div class="row">
+                <div  >
+
+
+                    <div class="box box-primary">
+                        <div class="box-body box-profile">
+                            <img class="profile-user-img img-responsive img-circle" src="{{ asset ('uploads/images/'~ user.image) }}" alt="User profile picture">
+
+                            <p class="text-muted text-center ">ENTREPRISE : <strong>{{ user.username }}</strong></p>
+
+                            <p class="text-muted text-center">  {{ user.headline }}
+
+                            <p class="text-muted text-center ">{{ user.location }}</p>
+                            <p class="text-muted text-center ">{{ user.email }}</p>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+
+
+                        <div class="box-header with-border">
+
+
+
+                            <div  class="box-body" >
+
+                                    <lu>
+                                        <a class="btn btn-primary pull-right" href="{{ path('internship_new') }}">Add a new internship</a>
+                                    </lu>
+
+                            </div>
+
+                            <div class="box-body">
+
+
+                                {% for internship in internships %}
+
+                                    <div  >
+                                        <div class="box box-default">
+                                            <div class="box-header with-border">
+                                                <img class="img-responsive pull-left" src="{{ asset ('uploads/images/'~ user.image)  }}" width="50" height="50" >
+                                                <u class="fa fa-bullhorn"></u>
+                                                <h3 class="box-title">{{ internship.title |capitalize }}</h3>
+                                                <h4> {{ internship.entreprisename |capitalize }}    </h4>
+                                                <lu class="pull-right">
+                                                    <a href="{{ path('internship_edit', { 'id': internship.id }) }}" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
+                                                    <a href="{{ path('internship_delete', { 'id': internship.id }) }}" class="btn btn-danger" onclick="return confirm('are u sure?')" > <i class="fa fa-trash"></i>  Delete</a>
+                                                    <a href="{{ path('internship_details', { 'id': internship.id }) }}" class="btn btn-success"  >  <i class="fa fa-eye"></i>   Details</a>
+                                                    <a href="{{ path('seekers', { 'id': internship.id }) }}" class="btn btn-bitbucket"  >  <i class="fa fa-group"></i>   Seekers</a>
+
+
+
+
+                                                </lu>
+                                            </div>
+                                            <!-- /.box-header -->
+                                            <div class="box-body">
+                                                <div  >
+                                                    <p style="text-align:center">      <img src="{{ asset ('uploads/images/'~ internship.image ) }}" class="fa-border" alt="User profile picture"></p>
+                                                </div>
+
+
+
+                                                <div>
+
+                                                    <strong>Description :</strong> <br>
+                                                    <div>
+                                                        {{ internship.description |capitalize }}
+                                                    </div>
+                                                </div>
+
+                                                <hr>
+                                                <div class="pull-left">
+
+                                                    {% if internship.date %}
+                                                        <li class="fa fa-fw fa-clock-o"></li>    {{ internship.date|date('Y-m-d') }}
+                                                    {% endif %}
+                                                </div>
+                                                <div  >
+
+                                                    | <li class="fa fa-fw fa-map-marker"></li> {{ user.location }}
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <!-- /.box-body -->
+                                        </div>
+                                        <!-- /.box -->
+                                    </div>
+
+                                {% endfor %}
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+

@@ -1,0 +1,64 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+
+<div class="well   col-md-9" >
+
+
+
+  {% for internship in internships %}
+
+  <div  >
+        <div class="box box-default">
+              <div class="box-header with-border">
+                    <img class="img-responsive pull-left" src="{{ asset ('uploads/images/'~ internship.userpicture)  }}" width="50" height="50" >
+                          <i class="fa fa-bullhorn"></i>
+                          <h3 class="box-title">{{ internship.title |capitalize }}</h3>
+                         <h4> {{ internship.entreprisename |capitalize }}    </h4>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                        <div  >
+                            <img class="profile-user-img img-responsive  " src="{{ asset ('uploads/images/'~ internship.image ) }}" alt="User profile picture">
+                        </div>
+
+
+
+                              <div>
+
+                             <strong>Description :</strong> <br>
+                            <div>
+                            {{ internship.description |capitalize }}
+                            </div>
+                            </div>
+
+                            <hr>
+                            <div class="pull-left">
+
+                                {% if internship.date %}
+                                <li class="fa fa-fw fa-clock-o"></li>    {{ internship.date|date('Y-m-d') }}
+                                {% endif %}
+                            </div>
+                            <div  >
+
+                              | <li class="fa fa-fw fa-map-marker"></li> {{ internship.userlocation}}
+                            </div>
+                            <div class="pull-right" >
+
+                                <a href="{{ path('internship_postule', { 'id': internship.id }) }}" class="btn btn-success"  > <i class="fa fa-envelope" ></i> Postuler </a>
+                            </div>
+
+                        </div>
+
+
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+
+            {% endfor %}
+
+
+
+</div>
+
